@@ -36,18 +36,18 @@ namespace NewGUI
             string query = "Select TOP 1 * From Jobs";
             WebDBDataSet ds = new WebDBDataSet();
 
-            using (OleDbConnection conn = new OleDbConnection(connstring))
-            {
-                OleDbCommand cmd = new OleDbCommand(query, conn);
-                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
-                conn.Open();
-                adapter.Fill(ds.Jobs);
-                foreach (var i in ds.Jobs)
-                {
-                    lbTest.Content = i.Operator;
-                }
 
+            OleDbConnection conn = new OleDbConnection(connstring);
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd);
+            conn.Open();
+            adapter.Fill(ds.Jobs);
+            foreach (var i in ds.Jobs)
+            {
+                lbTest.Content = i.Operator;
             }
+
+
         }
     }
 }
