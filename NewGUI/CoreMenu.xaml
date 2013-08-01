@@ -1,0 +1,90 @@
+﻿<Window x:Class="NewGUI.CoreMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        Title="CoreMenu" Height="162" Width="1060">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type dxb:BarButtonItemLinkControl}">
+                <Style.Triggers>
+                    <Trigger Property="ContainerType" Value="RibbonPageGroup">
+                        <Setter Property="Width" Value="80"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <dxb:BarManager>
+            <dxb:BarManager.Items>
+                <dxb:BarButtonItem x:Name="stopJob"
+                                   LargeGlyph="/NewGUI;component/Images/Stop.png"
+                                   Content="Stop Job"
+                                   ItemClick="stopJob_ItemClick"/>
+                <dxb:BarButtonItem x:Name="pauseJob"
+                                   LargeGlyph="/NewGUI;component/Images/Pause.png"
+                                   Content="Pause Job" ItemClick="pauseJob_ItemClick"/>
+                <dxb:BarButtonItem x:Name="startJob"
+                                   LargeGlyph="/NewGUI;component/Images/Play.png"
+                                   Content="Start Job" ItemClick="startJob_ItemClick"/>
+                <dxb:BarButtonItem x:Name="dummyButton"
+                                   Content="Button"/>
+            </dxb:BarManager.Items>
+            <Grid>
+                <dxr:RibbonControl x:Name="ribbonControl" 
+                                   AllowCustomization="False" 
+                                   ToolbarShowMode="Hide" 
+                                   RibbonHeaderVisibility="Visible" 
+                                   RibbonTitleBarVisibility="Collapsed"
+                                   ShowApplicationButton="False"
+                                   MinimizationButtonVisibility="Collapsed">
+                    <dxr:RibbonDefaultPageCategory>
+                        <dxr:RibbonPage Caption="Windows">
+                            <dxr:RibbonPageGroup Caption="F1">
+                                <dxb:BarButtonItemLink BarItemName="stopJob"/>
+                            </dxr:RibbonPageGroup>
+                            <dxr:RibbonPageGroup Caption="F2">
+                                <dxb:BarButtonItemLink BarItemName="pauseJob"/>
+                            </dxr:RibbonPageGroup>
+                            <dxr:RibbonPageGroup Caption="F3">
+                                <dxb:BarButtonItemLink BarItemName="startJob"/>
+                            </dxr:RibbonPageGroup>
+                            <dxr:RibbonPageGroup Caption="F4">
+                                <dxb:BarButtonItemLink BarItemName="dummyButton"/>
+                            </dxr:RibbonPageGroup>
+                            <dxr:RibbonPageGroup Caption="F5">
+                                <dxb:BarButtonItemLink BarItemName="dummyButton"/>
+                            </dxr:RibbonPageGroup>
+                            <dxr:RibbonPageGroup Caption="F6">
+                                <dxb:BarButtonItemLink BarItemName="dummyButton"/>
+                            </dxr:RibbonPageGroup>
+                            <dxr:RibbonPageGroup Caption="F7">
+                                <dxb:BarButtonItemLink BarItemName="dummyButton"/>
+                            </dxr:RibbonPageGroup>
+                            <dxr:RibbonPageGroup Caption="F8">
+                                <dxb:BarButtonItemLink BarItemName="dummyButton"/>
+                            </dxr:RibbonPageGroup>
+                            <dxr:RibbonPageGroup Caption="F9">
+                                <dxb:BarButtonItemLink BarItemName="dummyButton"/>
+                            </dxr:RibbonPageGroup>
+                            <dxr:RibbonPageGroup Caption="F10">
+                                <dxb:BarButtonItemLink BarItemName="dummyButton"/>
+                            </dxr:RibbonPageGroup>
+                            <dxr:RibbonPageGroup Caption="F11">
+                                <dxb:BarButtonItemLink BarItemName="dummyButton"/>
+                            </dxr:RibbonPageGroup>
+                            <dxr:RibbonPageGroup Caption="F12">
+                                <dxb:BarButtonItemLink BarItemName="dummyButton"/>
+                            </dxr:RibbonPageGroup>
+                        </dxr:RibbonPage>
+                        <dxr:RibbonPage Caption="VT Setup">
+                        </dxr:RibbonPage>
+                        <dxr:RibbonPage Caption="Preferences">
+                        </dxr:RibbonPage>
+                    </dxr:RibbonDefaultPageCategory>
+                </dxr:RibbonControl>
+            </Grid>
+        </dxb:BarManager>
+    </Grid>
+</Window>
