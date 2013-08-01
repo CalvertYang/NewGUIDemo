@@ -25,9 +25,7 @@ namespace NewGUI
         public MainWindow()
         {
             InitializeComponent();
-           
-
-           
+            DevExpress.Xpf.Core.ThemeManager.ApplicationThemeName = "Office2013";           
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
